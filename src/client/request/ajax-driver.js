@@ -4,7 +4,7 @@ var querystring = require('../../lib/querystring');
 var assign = require('../../lib/assign').assign;
 var prepBody = require('./prep-body');
 var parseBody = require('./parse-body');
-var isXHRAvailable = global.XMLHttpRequest && 'withCredentials' in new global.XMLHttpRequest();
+var isXHRAvailable = global.XMLHttpRequest;
 
 function getRequestObject() {
   return isXHRAvailable ? new XMLHttpRequest() : new XDomainRequest();
